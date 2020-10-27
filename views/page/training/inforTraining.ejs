@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../../component/head') %>
+</head>
+
+<body>
+    <!-- ##### Preloader ##### -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- Top Header Area -->
+        <div class="top-header">
+            <%- include('../../component/header') %>
+        </div>
+
+        <!-- Navbar Area -->
+        <div class="academy-main-menu">
+            <%- include('../../component/menu') %>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb-area bg-img" style="background-image: url(/img/bg-img/breadcumb.jpg);">
+        <div class="bradcumbContent">
+            <h2>TIN TỨC</h2>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### About Us Area Start ##### -->
+    <section class="about-us-area mt-50 section-padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
+                        <span>MỚI NHẤT</span>
+                        <%if(inforTraining){%>
+                        <h3><%= inforTraining.name %></h3>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="  mt-100 wow fadeInUp" data-wow-delay="600ms">
+                        <!-- <img src="/img/bg-img/bg-3.jpg" alt=""> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-12 wow fadeInUp" data-wow-delay="400ms">
+                    <p> 
+                        <%if(inforTraining){%>
+                        <h3><%- inforTraining.introduction %></h3>
+                        <%}%>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- ##### About Us Area End ##### -->
+
+    <!-- ##### Team Area Start ##### -->
+    <section class="teachers-area section-padding-0-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
+                        <span>XEM THÊM</span>
+                        <h3>TIN LIÊN QUAN</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Single Teachers -->
+
+                <% if(courses_rand.length>0){%>
+                        <%courses_rand.map(item=>{%>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="single-teachers-area text-center mb-100 wow fadeInUp" data-wow-delay="400ms">
+                                <!-- Thumbnail -->
+                                <div class="teachers-thumbnail">
+                                    <a href="/tin-tuc/chi-tiet-tin-tuc/<%= item._id %>"><img
+                                            src="<%= url %>/<%= item.image %>" alt="">
+                                    </a>
+                                </div>
+                                <!-- Meta Info -->
+                                <div class="teachers-info mt-30">
+                                    <a href="/tin-tuc/chi-tiet-tin-tuc/<%= item._id %>">
+                                        <h5><%= item.name%></h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <%})%>
+                        <%}%>
+            </div>
+
+            <!-- <div class="row rep-trang">
+                <div class="academy-pagination-area wow fadeInUp" data-wow-delay="400ms">
+                    <nav>
+                        <ul class="pagination">
+                            <li class="page-item active"><a class="page-link" href="#">01</a></li>
+                            <li class="page-item"><a class="page-link" href="#">02</a></li>
+                            <li class="page-item"><a class="page-link" href="#">03</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div> -->
+        </div>
+    </section>
+    <!-- ##### Features Area Start ##### -->
+
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <%- include('../../component/footer') %>
+                        </footer>
+                        <!-- ##### Footer Area Start ##### -->
+
+                        <!-- ##### All Javascript Script ##### -->
+                        <%- include('../../component/script') %>
+</body>
+
+</html>

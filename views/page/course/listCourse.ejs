@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../../component/head') %>
+</head>
+
+<body>
+    <!-- ##### Preloader ##### -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- Top Header Area -->
+        <div class="top-header">
+            <%- include('../../component/header') %>
+        </div>
+
+        <!-- Navbar Area -->
+        <div class="academy-main-menu">
+            <%- include('../../component/menu') %>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb-area bg-img" style="background-image: url(/img/bg-img/breadcumb.jpg);">
+        <div class="bradcumbContent">
+            <%if(coursesByID.length > 0){%>
+            <h2><%= coursesByID[0].id_courses.name %></h2>
+            <%}%>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### Blog Area Start ##### -->
+    <div class="blog-area mt-50 section-padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="academy-blog-posts">
+                        <div class="row">
+                            <!-- Single Blog Start -->
+                            <%if(coursesByID.length > 0){%>
+                                <%coursesByID.map(item=>{ %>
+                                    <div class="col-12">
+                                        <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms">
+                                            <!-- Post Thumb -->
+                                            <div class="blog-post-thumb mb-50">
+                                                <img src="<%= url %>/<%= item.image %>" alt="">
+                                            </div>
+                                            <!-- Post Title -->
+                                            <a href="/chi-tiet-thong-tin-khoa-hoc/<%= item._id%>" class="post-title"><%= item.name %></a>
+                                            <!-- Post Meta -->
+                                            <div class="post-meta">
+                                                <p>Bởi <a href="#"> admin </a> | <a href="#"><%= moment(item.updatedAt).format( 'HH:mm-MM/DD/YYYY') %></a></p>
+                                            </div>
+                                            <!-- Post Excerpt -->
+                                            <div class="course-infor">
+                                                <p> <%- item.introduction %></p>
+                                            </div>
+                                            <!-- Read More btn -->
+                                            <a href="/chi-tiet-thong-tin-khoa-hoc/<%= item._id%>" class="btn academy-btn btn-sm mt-15">Xem Thêm</a>
+                                        </div>
+                                    </div>
+                                <%})%>
+                            <%}%>
+                        </div>
+                    </div>
+                    <!-- Pagination Area Start -->
+                    <!-- <div class="academy-pagination-area wow fadeInUp" data-wow-delay="400ms">
+                        <nav>
+                            <ul class="pagination">
+                                <li class="page-item active"><a class="page-link" href="#">01</a></li>
+                                <li class="page-item"><a class="page-link" href="#">02</a></li>
+                                <li class="page-item"><a class="page-link" href="#">03</a></li>
+                            </ul>
+                        </nav>
+                    </div> -->
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="academy-blog-sidebar">
+                        <!-- Blog Post Widget -->
+                        <div class="blog-post-search-widget mb-30">
+                            <form action="#" method="post">
+                                <input type="search" name="search" id="Search" placeholder="Search">
+                                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </form>
+                        </div>
+
+                        <!-- Blog Post Catagories -->
+                        <div class="blog-post-categories mb-30">
+                            <h5>DANH SÁCH</h5>
+                            <ul>
+                                <% if (training.length>0){ %>
+                                <%training.map(item=>{ %>
+                                <li><a href="course.html"><%= item.name%> </a></li>
+                                <%})%>
+                                <%}%>
+                            </ul>
+                        </div>
+
+                        <!-- Latest Blog Posts Area -->
+                        <div class="latest-blog-posts mb-30">
+                            <h5>THÔNG TIN KHÓA HỌC KHÁC</h5>
+
+                                <!-- Single Latest Blog Post -->
+                            <%if(coursesByID_diff.length > 0){%>
+                                <%coursesByID_diff.map(item=>{ %>
+                                    <div class="single-latest-blog-post d-flex mb-30">
+                                        <div class="latest-blog-post-content">
+                                            <a href="#" class="post-title">
+                                                <h6><%= item.name%></h6>
+                                            </a>
+                                            <a href="#" class="post-date"><%= moment(item.updatedAt).format( 'HH:mm-MM/DD/YYYY') %></a>
+                                        </div>
+                                    </div>
+                                <%})%>
+                            <%}%>
+                        </div>
+                        <!-- Add Widget -->                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Blog Area End ##### -->
+
+
+
+
+
+     <!-- ##### Footer Area Start ##### -->
+     <footer class="footer-area">
+        <%- include('../../component/footer') %>
+            </footer>
+            <!-- ##### Footer Area Start ##### -->
+
+            <!-- ##### All Javascript Script ##### -->
+            <%- include('../../component/script') %>
+</body>
+
+</html>

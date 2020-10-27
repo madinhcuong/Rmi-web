@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
+                <span>TUYỂN SINH TRUNG CẤP, CAO ĐẲNG, LIÊN THÔNG ĐẠI HỌC VĂN BẰNG 2 VỪA HỌC VỪA LÀM</span>
+                <h3>
+                    TẠI VIỆN NGHIÊN CỨU QUẢN LÝ HÀNH CHÍNH</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Single Top Popular Course -->
+        <% if (courses_rand.length>0){%>
+        <%   courses_rand.map(item=>{ %>
+        <div class="col-12 col-lg-6">
+            <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp"
+                data-wow-delay="500ms">
+                <div class="popular-course-content">
+                    <h5><%= item.name%></h5>
+                    <span>ĐÁNH GIÁ</span>
+                    <div class="course-ratings">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <div class="course-content">
+                        <p><%- item.introduction%></p>
+                    </div>
+                    <a href="/chi-tiet-thong-tin-khoa-hoc/<%= item._id%>" class="btn academy-btn btn-sm">XEM THÊM</a>
+                </div>
+                <div class="popular-course-thumb bg-img">
+                    <img alt="" src="<%= url %>/<%= item.image %>">
+                </div>
+            </div>
+        </div>
+        <%})%>
+        <%}%>
+        
+    </div>
+</div>

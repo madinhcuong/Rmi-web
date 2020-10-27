@@ -1,0 +1,12 @@
+<!-- Single Hero Slide -->
+<% if(carousel.length>0){%>
+<%carousel.map(item=>{%>
+<div class="single-hero-slide bg-img">
+  <img src="<%= url %>/<%= item.image %>" alt="">
+</div>
+<%})%>
+<%}%>
+<!-- Single Hero Slide -->
+<!-- <div class="single-hero-slide bg-img" style="background-image: url(/img/riam/header/3.jpg);width: 1336px;
+height: 468px;">
+</div> -->

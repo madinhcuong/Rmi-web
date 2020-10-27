@@ -1,0 +1,93 @@
+<div class="classy-nav-container breakpoint-off">
+    <div class="container">
+        <!-- Menu -->
+        <nav class="classy-navbar justify-content-between" id="academyNav">
+
+            <!-- Navbar Toggler -->
+            <div class="classy-navbar-toggler">
+                <span class="navbarToggler"><span></span><span></span><span></span></span>
+            </div>
+
+            <!-- Menu -->
+            <div class="classy-menu">
+
+                <!-- close btn -->
+                <div class="classycloseIcon">
+                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                </div>
+
+                <!-- Nav Start -->
+                <div class="classynav">
+                    <ul style="font-size: 0px;">
+                        <li><a href="/">Trang chủ</a></li>
+                        <li><a href="#">Đào tạo</a>
+                            <ul class="dropdown">
+                                <% if (training.length>0){
+                                    training.map(item=>{ %>
+                                <li><a href="/dao-tao/<%= item._id%>"><%= item.name%> </a></li>
+                                <%})%>
+                                <%}%>
+                            </ul>
+                        </li>
+                        <li><a href="#">KHÓA HỌC</a>
+                            <div class="megamenu">
+                                <% if (courses.length>0){
+                                    courses.map(item=>{ %>
+                                <ul class="single-mega cn-col-3">
+                                    <li><a href="/thong-tin-khoa-hoc/<%= item._id%>"><%= item.name%></a></li>
+                                </ul>
+                                <%})%>
+                                <%}%>
+                               
+                                <!-- <ul class="single-mega cn-col-3">
+                                    <li><a href="./about-us.html">ĐÀO TẠO KỸ THUẬT Y SINH</a></li>
+                                    <li><a href="./about-us.html">ĐÀO TẠO ĐIỀU DƯỠNG ĐA KHOA</a></li>
+                                    <li><a href="./about-us.html">ĐÀO TẠO DƯỢC SĨ</a></li>
+                                    <li><a href="./about-us.html">ĐÀO TẠO NHA KHOA ĐA KHOA</a></li>
+                                    <li><a href="./about-us.html">ĐÀO TẠO VẬT LÝ TRỊ LIỆU</a></li>
+                                </ul>
+                                <ul class="single-mega cn-col-3">
+                                    <li><a href="./about-us.html">ĐÀO TẠO CÔNG NGHỆ THÔNG TIN</a></li>
+                                    <li><a href="./about-us.html">ĐÀO TẠO Y HỌC CỔ TRUYỀN</a></li>
+                                    <li><a href="./about-us.html">ĐÀO TẠO VĂN THƯ LƯU TRỮ</a></li>
+                                    <li><a href="./about-us.html">ĐÀO TẠO NGÀNH KẾ TOÁN</a></li>
+                                    <li><a href="./about-us.html">ĐÀO TẠO KỸ THUẬT XÂY DỰNG</a></li>
+                                </ul>
+                                <ul class="single-mega cn-col-3">
+                                    <li><a href="./about-us.html">NGHIỆP VỤ BẾP Á ÂU</a></li>
+                                    <li><a href="./about-us.html">ĐÀO TẠO CHỨNG CHỈ NGOẠI NGỮ 6 BẬC</a></li>
+                                    <li><a href="./about-us.html">NGHIỆP VỤ QUẢN LÝ NHÀ HÀNG KHÁCH SẠN</a>
+                                    </li>
+                                    <li><a href="./about-us.html">ĐÀO TẠO NGHIỆP VỤ BẢO VỆ</a></li>
+                                    <li><a href="./about-us.html">DU HỌC NHẬT MIỄN PHÍ HỌC PHÍ</a></li>
+                                </ul> -->
+                                <!-- <div class="single-mega cn-col-3">
+                                    <img src="/img/bg-img/bg-1.jpg" alt="">
+                                </div> -->
+                            </div>
+                        </li>
+                        <li><a href="/tin-tuc">TIN TỨC</a></li>
+                        <li><a href="/ghi-danh">GHI DANH</a></li>
+                        <li><a href="/lien-he">LIÊN HỆ</a></li>
+                        <li><a href="#">GIỚI THIỆU</a>
+                            <ul class="dropdown" style="width: 301px;">
+                                <li><a href="./about-us.html">VIỆN NGHIÊN CỨU HÀNH CHÁNH</a></li>
+                                <li><a href="./about-us.html">VÌ SAO CHỌN CHÚNG TÔI</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Nav End -->
+            </div>
+
+            <!-- Calling Info -->
+            <div class="calling-info">
+                <div class="call-center">
+                    <a href="tel:+654563325568889"><i class="icon-telephone-2"></i> <span>0936 201
+                            222</span></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../../component/head') %>
+</head>
+
+<body>
+    <!-- ##### Preloader ##### -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- Top Header Area -->
+        <div class="top-header">
+            <%- include('../../component/header') %>
+        </div>
+
+        <!-- Navbar Area -->
+        <div class="academy-main-menu">
+            <%- include('../../component/menu') %>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb-area bg-img" style="background-image: url(/img/bg-img/breadcumb.jpg);">
+        <div class="bradcumbContent">
+            <h2>ĐÀO TẠO</h2>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### Top Popular Courses Area Start ##### -->
+    <div class="top-popular-courses-area mt-50 section-padding-100-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
+                        <span>MỚI NHẤT</span>
+                        <% if (listByIdTraining.length>0){%>
+                        <h3><%= listByIdTraining[0].id_training.name%></h3>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <!-- Single Top Popular Course -->
+                <% if(listByIdTraining.length>0){%>
+                        <% listByIdTraining.map(item=>{ %>
+                        <div class="col-12 col-lg-6">
+                            <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp"
+                                data-wow-delay="400ms">
+                                <div class="popular-course-content">
+                                    <h5><%= item.name%></h5>
+                                    <span> admin | <%= moment(item.updatedAt).format( 'HH:mm-MM/DD/YYYY') %></span>
+                                    <div class="course-content">
+                                        <p> <%- item.introduction %></p>
+                                    </div>
+                                    <a href="/chi-tiet-thong-tin-khoa-hoc/<%= item._id%>"
+                                        class="btn academy-btn btn-sm">XEM THÊM</a>
+                                </div>
+                                <!-- <div class="popular-course-thumb bg-img"
+                                    style="background-image: url(./public/img/riam/TINTUC/học-bão-mẫu-cấp-tốc-tphcm-2020.jpg);">
+                                </div> -->
+                                <div class="popular-course-thumb bg-img">
+                                    <img src="<%= url %>/<%= item.image %>" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <%})%>
+                        <%}%>
+            </div>
+        </div>
+
+    </div>
+    <!-- <div class="container rep-trang">
+        <div class="row">
+            <div style="margin-bottom: 1%;" class="academy-pagination-area wow fadeInUp" data-wow-delay="400ms">
+                <nav>
+                    <ul class="pagination">
+                        <li class="page-item active"><a class="page-link" href="#">01</a></li>
+                        <li class="page-item"><a class="page-link" href="#">02</a></li>
+                        <li class="page-item"><a class="page-link" href="#">03</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div> -->
+    <!-- ##### Top Popular Courses Area End ##### -->
+
+    <!-- ##### CTA Area Start ##### -->
+    <div class="call-to-action-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="cta-content d-flex align-items-center justify-content-between flex-wrap">
+                        <h3>HÃY LIÊN HỆ VỚI CHÚNG TÔI KHI BẠN ĐÃ SẴN SÀNG !</h3>
+                        <a href="https://www.riam.vn/register/www.riam.edu.vn" class="btn academy-btn">GHI DANH</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### CTA Area End ##### -->
+    <!-- ##### Course Area Start ##### -->
+    <div class="academy-courses-area section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <!-- Single Course Area -->
+                <% if (training.length>0){%>
+                        <%training.map(item=>{%>
+                        <div class="col-12 col-lg-4 rep1-icon">
+                            <div class="single-course-area d-flex align-items-center mb-100">
+                                <div class="course-icon">
+                                    <i class="fa fa-bookmark"></i>
+                                </div>
+                                <div class="course-content">
+                                    <a href="./course.html">
+                                        <h4><%= item.name%></h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <%})%>
+                        <%}%>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Course Area End ##### -->
+
+
+
+
+
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <%- include('../../component/footer') %>
+                        </footer>
+                        <!-- ##### Footer Area Start ##### -->
+
+                        <!-- ##### All Javascript Script ##### -->
+                        <%- include('../../component/script') %>
+</body>
+
+</html>
